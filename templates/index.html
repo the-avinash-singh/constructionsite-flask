@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Construction site</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/page.css')}}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- top section -->
+    <div class="home">
+      <video autoplay muted loop>
+        <source
+          src="{{url_for('static',filename='img/vid1.mp4')}}"
+          type="video/mp4"
+        />
+      </video>
+      <!-- overlay and text -->
+      <div class="overlay"></div>
+      <div class="home-content text-center">
+        <div>
+          Your <strong>happily</strong> ever <strong>after</strong> begins at
+          <strong>home.</strong>
+        </div>
+        <div>
+          Come find your <strong>happiest place </strong> with
+          <strong>us!</strong>
+        </div>
+        <div class="text-decoration-none">
+          <a>Residential</a> | <a>Commercial</a>
+        </div>
+        <div
+          class="dropdown mt-2 d-flex flex-column flex-sm-row justify-content-center align-items-center"
+        >
+          <select
+            class="form-select w-auto"
+            aria-label="Default select example"
+          >
+            <option selected>Select City</option>
+            <option value="">Bangalore</option>
+            <option value="">Pune</option>
+            <option value="">Delhi</option>
+            <option value="">Mumbai</option>
+            <option value="">Hyderabad</option>
+            <option value="">Ahemdabad</option>
+            <option value="">Chennai</option>
+          </select>
+          <form class="form-inline my-2 my-lg-0 d-flex align-items-center ms-3">
+            <input
+              class="form-control mr-sm-2 h-50"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="ms-3 btn btn-warning my-2 my-sm-0" type="submit">
+              search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- new arrivals section -->
+    <div class="new-arrival text-center">
+      <h2 class="pt-2">New Arrival:</h2>
+      <div
+        id="carousel-1"
+        class="carousel slide cust-carousel-item-wrapper"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          {% for data in apiData%}
+          <div
+            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
+            id="slide{{ loop.index }}"
+            data-bs-interval="2000"
+          >
+            <div
+              class="cust-carousel-item-inner-wrapper d-flex justify-content-between mx-auto"
+            >
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+        <div class="text-center mt-3">
+          <a
+            class="text-decoration-none text-dark"
+            type="button"
+            data-bs-target="#carousel-1"
+            data-bs-slide="prev"
+          >
+            <span class="">&lt;-</span>
+          </a>
+          <a href="#" class="text-decoration-none text-dark">view all</a>
+          <a
+            class="text-decoration-none text-dark"
+            type="button"
+            data-bs-target="#carousel-1"
+            data-bs-slide="next"
+          >
+            <span class="">-&gt;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- trending project section -->
+    <div class="trend-proj text-center">
+      <h2 class="pt-2">Trending projects:</h2>
+      <div
+        id="carousel-2"
+        class="carousel slide cust-carousel-item-wrapper"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          {% for data in apiData%}
+          <div
+            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
+            id="slide{{ loop.index }}"
+            data-bs-interval="2000"
+          >
+            <div
+              class="cust-carousel-item-inner-wrapper d-flex justify-content-between mx-auto"
+            >
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+        <div class="text-center mt-3">
+          <a
+            class="text-decoration-none text-dark"
+            type="button"
+            data-bs-target="#carousel-2"
+            data-bs-slide="prev"
+          >
+            <span class="">&lt;-</span>
+          </a>
+          <a href="#" class="text-decoration-none text-dark">view all</a>
+          <a
+            class="text-decoration-none text-dark"
+            type="button"
+            data-bs-target="#carousel-2"
+            data-bs-slide="next"
+          >
+            <span class="">-&gt;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- what matters section -->
+    <div class="what-matter text-center overflow-auto">
+      <div class="fs-2 pt-2">Filter by <strong>What Matters:</strong></div>
+      <div
+        class="d-flex justify-content-around align-items-center flex-wrap text-wrap"
+      >
+        {%for mdata in matterData%}
+        <div class="matter-card">
+          <div class="matter-div mx-auto align-content-center">
+            {{mdata.heading}}
+          </div>
+          {{mdata.title}}
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+    <!-- lets find section -->
+    <div class="let-find text-center overflow-auto px-4">
+      <div class="fs-2 pt-2">
+        Let's find <strong>you</strong> a <strong>home</strong> in the
+        <strong>city</strong> you love <strong>most!</strong>
+      </div>
+      <div
+        class="my-4 let-btn-wrapper d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
+      >
+        {%for text in letFindData%}
+        <button class="let-btn mx-2">{{text}}</button>
+        {%endfor%}
+      </div>
+      <div class="fs-3 pt-2 mb-4">
+        We <strong>promise</strong>, buying <strong>property</strong> with
+        <strong>Wyndo</strong> is as <strong>easy</strong> as catching up with
+        an old <strong>friend!</strong>
+        <!-- todo arrow breadcrum design -->
+      </div>
+    </div>
+    <!-- browse section -->
+    <div class="browse text-center overflow-auto">
+      <div class="fs-2 pt-2">
+        Browse <strong>Our Current Exclusives:</strong>
+      </div>
+      <div
+        class="browse-btn-wrapper my-5 d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
+      >
+        {%for text in browseBtnData%}
+        <button class="browse-btn mx-2 my-4 shadow">{{text}}</button>
+        {%endfor%}
+      </div>
+    </div>
+    <!-- just like Section -->
+    <div class="just-like text-center px-md-4">
+      <div class="fs-2 py-2 pb-4">
+        Just like the <strong>good old days</strong>-but
+        <strong>better</strong>! we'll handel the <strong>details</strong> so
+        <strong>you</strong> can
+        <strong>focus on your <strong>new beginning.</strong></strong>
+      </div>
+      <div class="fs-2 my-4">
+        we've got <strong>you</strong> covered, every <strong>step</strong> of
+        the <strong>way</strong>... from <strong>loans</strong> to
+        <strong>moving vans.</strong>
+      </div>
+      <div class="d-flex justify-content-center my-4">
+      <ol class="text-start mx-auto">
+        <li>
+          <strong>Loan Assistance</strong> - The best loans, handpicked for you.
+        </li>
+        <li>
+          <strong>Packers & Movers</strong> - Fast, easy moving with our trusted
+          network.
+        </li>
+        <li>
+          <strong>Charging Ahead</strong> We'll also set up your EV Station!
+        </li>
+      </ol>
+    </div>
+      <div class="my-4">But <strong>Wait,</strong> there's more!</div>
+      <div class="my-4">
+        Our <strong>Concierge</strong> Service: <strong>Your</strong> home,
+        <strong>Our</strong> care.
+      </div>
+      <div class="my-4 mx-4">
+        Relax and let us handle the <strong>day-to-day</strong> property management,
+        from <strong>tenant screening </strong> to <strong>maintenance</strong>,
+        while providing <strong>personalized</strong> Concierge service
+        <strong>tailored</strong> to your <strong>needs</strong>.
+      </div>
+      <div class="d-flex justify-content-center my-4">
+        <ul class="text-start">
+          <li><strong>Property Tax?</strong> We'll take care of the process!</li>
+          <li><strong>Electricity & Water Bills?</strong> We'll facilitate everything!</li>
+          <li><strong>Maintenance Fees?</strong> We'll make it a breeze!</li>
+        </ul>
+      </div>
+      <div><strong>Home</strong> sweet <strong>upgraded</strong> home!</div>
+      <div
+        class="d-flex gap-4 justify-content-around align-items-center flex-wrap text-wrap py-4"
+      >
+          <div class="just-div mx-auto align-content-center">
+            From <strong>drab</strong> to <strong>fab:</strong> we help you <strong>design your home interiors</strong>with <strong>heart.</strong>
+          </div>
+        <div class="just-div mx-auto align-content-center">
+          <strong>Safety First:</strong> We secure your <strong>property</strong> with <strong>CCTV, alarms</strong> and <strong>motion sensors-</strong>our team's on it!
+        </div>
+        <div class="just-div mx-auto align-content-center">
+          <strong>Welcome to the Future: wyndo</strong> takes care of <strong>all your</strong> home <strong>automation</strong> for you!
+        </div>
+      </div>
+    </div>
+    <!-- need a hand section -->
+     <div class="need-hand text-center px-md-4">
+      <div class="fs-2 py-2">Need a hand? <strong>Talk</strong> to us - we'll <strong>guide</strong> you <strong>home.</strong></div>
+      <div class="fs-4">
+        Picked, perfected and prepped just for you - <strong>Resyd&trade;</strong> homes are as <strong>move-in-ready</strong> as it gets!
+      </div>
+      <div
+        id="carousel-3"
+        class="carousel slide cust-carousel-item-wrapper py-4"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          {% for data in apiData%}
+          <div
+            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
+            id="slide{{ loop.index }}"
+            data-bs-interval="2000"
+          >
+            <div
+              class="cust-carousel-item-inner-wrapper d-flex justify-content-between mx-auto"
+            >
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+              <div class="bg-white cust-carousel-item rounded-5"></div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+        <div class="text-center mt-3">
+          <a
+            class="text-decoration-none text-dark"
+            type="button"
+            data-bs-target="#carousel-3"
+            data-bs-slide="prev"
+          >
+            <span class="">&lt;-</span>
+          </a>
+          <a href="#" class="text-decoration-none text-dark">view all</a>
+          <a
+            class="text-decoration-none text-dark"
+            type="button"
+            data-bs-target="#carousel-3"
+            data-bs-slide="next"
+          >
+            <span class="">-&gt;</span>
+          </a>
+        </div>
+      </div>
+     </div>
+     <!-- redefine section -->
+     <div class="redefine text-center px-md-4">
+      <div class="fs-2 py-2 pb-4">
+        <strong>Redefine your status:</strong> Discover <strong>stunning</strong> properties from <strong>Dubai</strong> to <strong>London</strong> with undeatabe <strong>return-on-investments!</strong>
+      </div>
+      <div
+        class="mt-4 pb-5 let-btn-wrapper d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
+      >
+        {%for text in redefineData%}
+        <button class="let-btn mx-2">{{text}}</button>
+        {%endfor%}
+      </div>
+     </div>
+     <!-- best at section -->
+      <div class="best-at text-center" id="accordionFlushExample">
+        <div class="fs-2 py-2">
+          Here's what we're <strong>best</strong> at:
+        </div>
+        <div class="d-flex justify-content-around gap-5 gap-md-3 flex-wrap py-5">
+        {% for data in bestData%}
+        <div class="accordion best-acc rounded-5">
+          <div class="accordion-item rounded-5 best-acc-sh">
+            <h2 class="accordion-header border-bottom rounded-5">
+              <button class="accordion-button bg-white collapsed rounded-5 text-wrap best-acc-btn text-center p-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{loop.index}}" aria-expanded="false" aria-controls="flush-collapse{{loop.index}}">
+                <span>{{loop.index}}. <strong>{{data.heading}}</strong> {{data.title}}</span>
+              </button>
+            </h2>
+            <div id="flush-collapse{{loop.index}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">{{data.body}}</div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+      </div>
+      <!-- shoppers section -->
+       <div class="shopper text-center px-md-4">
+        <div class="fs-3 pt-2 pb-4">No. of <strong>wyndo</strong>- shoppers who've discovered their <strong>dream home</strong>, here:
+          <span class="d-flex justify-content-center">
+            <span class="digit-box border border-2 border-black" id="box1">
+              <span class="digit" id="digit1">0</span>
+          </span>
+          <div class="digit-box border border-2 border-start-0 border-end-0 border-black" id="box2">
+              <div class="digit" id="digit2">0</div>
+          </div>
+          <div class="digit-box border border-2 border-black" id="box3">
+              <div class="digit" id="digit3">0</div>
+          </div>
+      </span>
+      <div class="viewport-observer" id="viewportTrigger"></div>
+    </div>
+    <div class="fs-4 mb-2">Buying a <strong>home</strong> is like having a <strong>Conversation</strong> with an old <strong>friend.</strong></div>
+    <div class="fs-4">
+      <strong>Schedule a Free Consultation</strong>: Book a 15-minute call and get <strong>personalized guidence.</strong>
+    </div>
+       </div>
+       <!-- wy choose section -->
+        <div class="choose">
+          <div class="fs-2 text-center pt-2 mb-4">why choose <strong>wyndo</strong>? what sets <strong>us</strong> apart?</div>
+          <div class="d-flex flex-column align-items-center">
+            <ul class="fs-5 pb-5 mb-0 choose-list">
+              <li><strong>A companion in Your Home Journey</strong>: Whether you buy your home through Wyndo or not, we're here for every step of your journey-from designing your interiors to concierge services and helping you move in. Our commitment doesn't waver, even if your final choice isn't with us.</li>
+              <li><strong>Quality We Trust</strong>: We only offer properties and projects we'd choose for ourselves. If it's not good enough for us, it's not good enough for you.</li>
+              <li><strong>Your Property Hub</strong>: Skip the hassle of hunting property by property. With Wyndo, you get access to a full buffet of options, from free to premium. No pressure to make a rushed decision-take your time. Buying a home is a big step, not a race against the clock.</li>
+              <li><strong>Tailored Just For You</strong>: We know one size doesn't fit all. At Wyndo, it's all about personalizing your experience to match your lifestyle and preferences.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ready to join section -->
+         <div class="ready text-center px-md-4 px-3 px-sm-0">
+          <h2>Ready to join us on thid journey?</h2>
+          <div class="fs-4 mb-3">Discover how Wyndo can assist you in finding the perfect property or invest. Get in touch with us today!</div>
+          <h2 class="text-decoration-underline">GET STARTED</h2>
+          <div class=" fs-4">Our Vision & Mission:</div>
+          <div class="text-start d-flex flex-column align-items-center">
+            <div class="fs-5 ready-list"><strong>Our Vision:</strong> To be your one-stop destination for personalised real estate solution and provide an unmatched homebuying esperience.</div>
+            <div class="fs-5 ready-list mb-3"><strong>Our Mission</strong> Our mission is ti nake homeownership accessible, rewarding and a delight experience. By blending innovative technology with personalised service, we aim ti transform how people buy and sell homes in major indian cities-one click at a time.</div>
+          </div>
+          <h2>Our core values</h2>
+          <div class="d-flex flex-column align-items-center">
+            <ul class="ready-list text-start mb-0">
+              <li class="fs-5"><strong>Integraty:</strong> We're all about straight talk and honest dealings. No hidden agendas or shady or practices.</li>
+              <li class="fs-5"><strong>Innovation:</strong> We're the pioneers in the real estate industry, always dreaming up new and exciting ways to help you in your homebuying journey.</li>
+              <li class="fs-5"><strong>Coustomer-Centricity:</strong>Our clients are at the heart of everything we do. We're dedicated to providing exceptional customer service and exceeding expectations.</li>
+            </ul>
+          </div>
+         </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
