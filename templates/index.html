@@ -168,9 +168,9 @@
       >
         {%for mdata in matterData%}
         <div class="matter-card">
-          <div class="matter-div mx-auto align-content-center">
+          <a href="filter/{{mdata.filter}}" class="text-decoration-none"><button class="matter-btn d-block mx-auto align-content-center">
             {{mdata.heading}}
-          </div>
+          </button></a>
           {{mdata.title}}
         </div>
         {%endfor%}
@@ -185,8 +185,8 @@
       <div
         class="my-4 let-btn-wrapper d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
       >
-        {%for text in letFindData%}
-        <button class="let-btn mx-2">{{text}}</button>
+        {%for letData in letFindData%}
+        <a href="filter/{{letData.filter}}"><button class="let-btn mx-2">{{letData.text}}</button></a>
         {%endfor%}
       </div>
       <div class="fs-3 pt-2 mb-4">
@@ -341,7 +341,7 @@
         <div class="accordion best-acc rounded-5">
           <div class="accordion-item rounded-5 best-acc-sh">
             <h2 class="accordion-header border-bottom rounded-5">
-              <button class="accordion-button bg-white collapsed rounded-5 text-wrap best-acc-btn text-center p-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{loop.index}}" aria-expanded="false" aria-controls="flush-collapse{{loop.index}}">
+              <button class="accordion-button bg-white collapsed rounded-5 text-wrap shadow-none text-center p-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{loop.index}}" aria-expanded="false" aria-controls="flush-collapse{{loop.index}}">
                 <span>{{loop.index}}. <strong>{{data.heading}}</strong> {{data.title}}</span>
               </button>
             </h2>

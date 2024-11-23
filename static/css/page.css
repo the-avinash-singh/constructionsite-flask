@@ -55,7 +55,7 @@ video {
     width: 24rem;
     height: 15rem;
   }
-  .matter-div {
+  .matter-btn {
     width: 15rem;
     height: 7rem;
     font-size: 1.5rem;
@@ -68,7 +68,7 @@ video {
     cursor: pointer;
     margin: 35px 0;
   }
-  .matter-div:hover {
+  .matter-btn:active {
     box-shadow: none;
     transform: translate(3px, 3px);
   }
@@ -175,12 +175,8 @@ video {
   width: 21rem;
 }
 .best-acc-sh{
-  box-shadow: -2px 10px rgb(72, 163, 127) !important;
+  box-shadow: -2px 6px rgb(72, 163, 127) !important;
   
-}
-.best-acc-btn{
-  outline: none !important;
-  box-shadow: none !important;
 }
   @media (max-width:500px){
   .cust-carousel-item-wrapper{
@@ -198,7 +194,7 @@ video {
       height: 57rem;
     }
     .home-content{
-      top:25%
+      top:35%
     }
     .cust-carousel-item{
       width: 10rem;
@@ -231,6 +227,9 @@ video {
     }
   }
   @media (min-width:1000px){
+    .home-content{
+      top:25%
+    }
     .cust-carousel-item{
       width: 12rem;
       height: 12rem;

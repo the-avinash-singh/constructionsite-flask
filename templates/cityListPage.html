@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction site: locations</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/city.css')}}">
+</head>
+<body class="bg-body-secondary">
+    <div class="d-flex m-3 flex-column flex-md-row">
+    <div class="fs-3 fw-medium me-md-3 bg-white rounded-3 filter-menu pb-4 overflow-auto my-4 my-md-0">
+        <div class="border-bottom"><i class="fa-solid fa-filter m-3"></i>Filters</div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          {% for filterData in filterData %}
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{loop.index}}" aria-expanded="false" aria-controls="flush-collapse{{loop.index}}">
+                  <i class="{{filterData.icon}} me-3 fs-4"></i>{{filterData.name}}
+                </button>
+              </h2>
+              <div id="flush-collapse{{loop.index}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="d-flex gap-3 flex-wrap ">
+                    {% if (filterData.type=='btn') %}
+                    {% for option in filterData.body %}
+                    <a href="/filter/{{option.filter}}"><button class="btn btn-outline-dark rounded-5">
+                      {{option.type}}
+                    </button></a>
+                    {% endfor %}
+                    {% endif %}
+                    {% if(filterData.type=='range') %}
+                    <div class="fs-6 fw-normal w-100">
+                      <div class=" d-flex flex-md-wrap justify-content-between align-items-center mb-3">
+                        <input type="text" class="form-control me-2 me-md-0 mb-md-2" name="budget" id="budget">
+                        <button class="btn btn-warning" id="budget-button">search</button>
+                      </div>
+                      <input type="range" class="d-block w-100" min="50000" max="100000000" value="100000" id="budget-range"> 
+                      &#8377; <span id="budget-output">100000</span>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+    </div>
+    <div class="gap-4 gap-lg-5 d-flex justify-content-evenly flex-wrap mx-auto">
+        {% for city in cardData %}
+        <div class="card city-card mx-md-0">
+            <div class=" d-flex justify-content-end position-absolute p-2 card-badge fw-normal bg-danger badge rounded-pill">
+        New Launch
+        </div>
+            <img src="{{url_for('static',filename='img/placeholder.svg')}}" class="card-img-top">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="fs-4 fs-md-3 build-name fw-medium">{{city.buildingName}}</span> <span class="bg-dark-subtle rera-text rounded-5 p-1 px-2 text-body-secondary mb-2">RERA <img src="{{url_for('static',filename='img/tic.png')}}" alt="" class="check-img"></span>
+                </div>
+                    <p class="card-text text-body-secondary build-add mb-0">By {{city.builderName}} {{city.builderAdd}}</p>
+                    <p class=" card-text text-end text-body-secondary">{{city.buildArea}} <sub>sq.ft</sub></p>
+            </div>
+            <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+                <span class="fw-bold">&#8377; {{city.minPrice}}Cr - {{city.maxPrice}}Cr</span>
+              <a href="#" class="text-decoration-none p-3 py-2 contact-btn btn-light:hover rounded-5">Contact</a>
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://kit.fontawesome.com/c3ec3021ae.js" crossorigin="anonymous"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

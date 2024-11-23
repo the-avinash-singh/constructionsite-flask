@@ -1,0 +1,43 @@
+.city-card{
+    width:18rem !important;
+}
+.build-name{
+    height: 4rem;
+}
+.build-add{
+    height: 2rem;
+}
+.rera-text{
+    height: 2rem;
+    text-wrap: nowrap;
+}
+.check-img{
+    width:15px;
+    padding-bottom: 3px;
+}
+.contact-btn{
+    background-color: rgb(222, 222, 222);
+    color: rgb(247, 0, 255);
+}
+.card-badge{
+    top: 7px !important;
+    left: 5px !important;
+}
+.filter-menu{
+    width: 100%;
+    height: 100%;
+}
+@media (min-width:768px){
+    .filter-menu{
+        min-width: 10%;
+        max-width: 25%;
+    }
+    .city-card{
+        width:15rem !important;
+    }
+}
+@media (min-width:900px){
+    .city-card{
+        width:17rem !important;
+    }
+}
