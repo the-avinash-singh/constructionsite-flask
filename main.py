@@ -335,5 +335,7 @@ def home():
 
 @app.route('/filter/<string:filter>')
 def filter(filter):
+    if(filter=="all"):
+          return render_template('cityListPage.html',cardData=cardData, filterData=filterData)
     filteredCardData = [property for property in cardData if filter in property['filter']]
     return render_template('cityListPage.html',cardData=filteredCardData, filterData=filterData)

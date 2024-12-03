@@ -29,8 +29,8 @@
 }
 @media (min-width:768px){
     .filter-menu{
-        min-width: 10%;
-        max-width: 25%;
+        min-width: 25%;
+        max-width: 30%;
     }
     .city-card{
         width:15rem !important;
