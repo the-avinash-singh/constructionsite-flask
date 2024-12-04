@@ -1,0 +1,13 @@
+:root{
+  --bg-color:#fffce2e3;
+}
+body{
+  background-color:var(--bg-color) !important;
+}
+.login-card{
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

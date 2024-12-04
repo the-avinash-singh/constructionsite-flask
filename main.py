@@ -331,11 +331,29 @@ def home():
                            browseBtnData=browseBtnData,
                            redefineData=redefineData,
                            bestData=bestData,
+                           cssFileName="page.css",
+                           title="Construction"
                            )
 
 @app.route('/filter/<string:filter>')
 def filter(filter):
     if(filter=="all"):
-          return render_template('cityListPage.html',cardData=cardData, filterData=filterData)
+          return render_template('cityListPage.html',
+                                 cardData=cardData,
+                                filterData=filterData,
+                                cssFileName="city.css",
+                                title="Construction site: location"
+                                )
     filteredCardData = [property for property in cardData if filter in property['filter']]
-    return render_template('cityListPage.html',cardData=filteredCardData, filterData=filterData)
+    return render_template('cityListPage.html',
+                           cardData=filteredCardData,
+                            filterData=filterData,
+                            cssFileName="city.css",
+                           title="Construction site: location"
+                           )
+@app.route("/login")
+def login():
+      return render_template("login.html",
+                             cssFileName="login.css",
+                           title="Construction"
+                             )
