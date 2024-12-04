@@ -183,7 +183,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:rgb(225, 225, 225) ;
+  background-color:gainsboro;
   background-image: inherit;
   background-size: cover;
   background-position: center;
@@ -220,7 +220,7 @@ body{
 }
   @media (min-width:780px){
     .home{
-      height: 54rem;
+      height: 53rem;
     }
     .home-content{
       font-size: 4dvw;

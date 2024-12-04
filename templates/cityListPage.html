@@ -1,7 +1,7 @@
 {%extends "layout.html"%}
 {% block body %}
-    <div class="d-flex flex-column flex-md-row page-wrapper">
-    <div class="fs-3 fw-medium me-md-3 bg-white rounded-3 filter-menu pb-4 overflow-auto my-4 my-md-0">
+    <div class="d-flex flex-column flex-md-row m-3">
+    <div class="fs-3 fw-medium me-md-3 bg-white shadow rounded-3 filter-menu pb-4 overflow-auto my-4 my-md-0">
         <div class="border-bottom"><i class="fa-solid fa-filter m-3"></i>Filters</div>
         <div class="accordion accordion-flush" id="accordionFlushExample">
           {% for filterData in filterData %}
@@ -40,8 +40,8 @@
     </div>
     <div class="gap-4 gap-lg-5 d-flex justify-content-evenly flex-wrap mx-auto">
         {% for city in cardData %}
-        <div class="card city-card mx-md-0">
-            <div class=" d-flex justify-content-end position-absolute p-2 card-badge fw-normal bg-danger badge rounded-pill">
+        <div class="card city-card mx-md-0 shadow">
+            <div class=" d-flex justify-content-end position-absolute p-2 card-badge fw-normal bg-danger badge rounded-pill shadow">
         New Launch
         </div>
             <img src="{{url_for('static',filename='img/placeholder.svg')}}" class="card-img-top">

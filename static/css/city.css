@@ -4,9 +4,6 @@
   body{
     background-color:var(--bg-color) !important;
   }
-  .page-wrapper{
-    margin: 5rem 1rem;
-  }
 .city-card{
     width:18rem !important;
 }
