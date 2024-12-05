@@ -369,6 +369,31 @@
     <div class="fs-4">
       <strong>Schedule a Free Consultation</strong>: Book a 15-minute call and get <strong>personalized guidence.</strong>
     </div>
+    <div id="calendar"></div>
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          timeZone: 'UTC',
+            initialView: 'timeGridWeek',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: JSON.parse('{{ events | tojson}}'),
+            eventClick: function(info) {
+                info.jsEvent.preventDefault();
+                if (info.event.url) {
+                    window.open(info.event.url, '_blank');
+                }
+            },
+        });
+
+        calendar.render();
+      });
+    </script> 
        </div>
        <!-- why choose section -->
           <div class="fs-2 text-center pt-2 mb-4 heading">why choose <strong>wyndo</strong>? what sets <strong>us</strong> apart?</div>

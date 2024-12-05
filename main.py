@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, jsonify
 
 app=Flask(__name__)
 
@@ -322,6 +322,15 @@ filterData=[
             "icon":"fa-solid fa-sliders",
         },
     ]
+events = [
+    {"title": "Morning Connect", "start": "2024-12-25T02:00:00", "end": "2024-12-25T02:30:00","color":" #CCCCFF"},
+    {"title": "Evening Connect", "start": "2024-12-25T02:30:00", "end": "2024-12-25T03:00:00", "color":"red"},
+    {"title": "Morning Connect", "start": "2024-12-05T02:00:00", "end": "2024-12-05T02:30:00","color":" #CCCCFF"},
+    {"title": "Here is a link", "start": "2024-12-06T02:30:00", "end": "2024-12-06T03:00:00", "color":"green",'url':"www.google.com",},
+    {"title": "Morning Connect", "start": "2024-12-07T02:00:00", "end": "2024-12-07T02:30:00","color":"yellow"},
+    {"title": "Evening Connect", "start": "2024-12-08T02:30:00", "end": "2024-12-08T03:00:00", "color":"#98A869"},
+    ]
+
 @app.route('/')
 def home():
         return render_template("index.html" ,
@@ -332,7 +341,8 @@ def home():
                            redefineData=redefineData,
                            bestData=bestData,
                            cssFileName="page.css",
-                           title="Construction"
+                           title="Construction Site",
+                           events=events,
                            )
 
 @app.route('/filter/<string:filter>')
@@ -359,5 +369,5 @@ def login():
       return render_template(
            "login.html",
             cssFileName="login.css",
-            title="Construction"
+            title="Construction Site"
         )
