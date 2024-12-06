@@ -1,0 +1,36 @@
+<div id="calendar"></div>
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          timeZone: 'UTC',
+          aspectRatio:2,
+            initialView: 'timeGridWeek',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: JSON.parse('{{ events | tojson}}'),
+            eventDidMount: function(info) {
+        tippy(info.el, {
+            content: `
+                <strong>${info.event.title}</strong><br>
+                ${info.event.extendedProps.description || ''}
+            `,
+            allowHTML: true,
+        })
+    },
+            eventClick: function(info) {
+                info.jsEvent.preventDefault();
+                if (info.event.url) {
+                    window.open(info.event.url);
+                }
+            },
+            height: 'auto',
+        });
+
+        calendar.render();
+      });
+    </script> 

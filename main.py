@@ -2,7 +2,22 @@ from flask import Flask,render_template, jsonify
 
 app=Flask(__name__)
 
-data=[{},{},{}]
+data=[
+      {
+      "url1":"https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url2":"https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url3":"https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      "url1":"https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url2":"https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url3":"https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+       "url1":"https://plus.unsplash.com/premium_photo-1661876449499-26de7959878f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url2":"https://plus.unsplash.com/premium_photo-1661883982941-50af7720a6ff?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url3":"https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",   
+    }]
 matterData=[
         {
         "heading":"Quiet Spaces",
@@ -323,12 +338,49 @@ filterData=[
         },
     ]
 events = [
-    {"title": "Morning Connect", "start": "2024-12-25T02:00:00", "end": "2024-12-25T02:30:00","color":" #CCCCFF"},
-    {"title": "Evening Connect", "start": "2024-12-25T02:30:00", "end": "2024-12-25T03:00:00", "color":"red"},
-    {"title": "Morning Connect", "start": "2024-12-05T02:00:00", "end": "2024-12-05T02:30:00","color":" #CCCCFF"},
-    {"title": "Here is a link", "start": "2024-12-06T02:30:00", "end": "2024-12-06T03:00:00", "color":"green",'url':"www.google.com",},
-    {"title": "Morning Connect", "start": "2024-12-07T02:00:00", "end": "2024-12-07T02:30:00","color":"yellow"},
-    {"title": "Evening Connect", "start": "2024-12-08T02:30:00", "end": "2024-12-08T03:00:00", "color":"#98A869"},
+    {
+        "title": "Morning Connect",
+        "start": "2024-12-25T02:00:00",
+        "end": "2024-12-25T02:30:00",
+        "color":" #CCCCFF",
+        "description": "Team sync-up session",
+        },
+    {
+        "title": "Evening Connect",
+        "start": "2024-12-25T02:30:00",
+        "end": "2024-12-25T03:00:00",
+        "color":"red",
+        "description": "Team sync-up session",
+        },
+    {
+        "title": "Morning Connect",
+        "start": "2024-12-05T02:00:00",
+        "end": "2024-12-05T02:30:00",
+        "color":" #CCCCFF",
+        "description": "Team sync-up session",
+        },
+    {
+        "title": "Here is a link",
+        "start": "2024-12-06T02:30:00",
+        "end": "2024-12-06T03:00:00",
+        "color":"green",
+        'url':"www.google.com",
+        "description": "opens google.com",
+        },
+    {
+        "title": "Morning Connect",
+        "start": "2024-12-07T02:00:00",
+        "end": "2024-12-07T02:30:00",
+        "color":"yellow",
+        "description": "Team sync-up session",
+        },
+    {
+        "title": "Evening Connect",
+        "start": "2024-12-08T02:30:00",
+        "end": "2024-12-08T03:00:00",
+        "color":"#98A869",
+        "description": "Team sync-up session",
+        },
     ]
 
 @app.route('/')
