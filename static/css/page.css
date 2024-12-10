@@ -130,22 +130,6 @@ body{
     box-shadow: none;
     transform: translate(3px, 3px);
   }
-.digit-box {
-  width: 20px;
-  height: 30px;
-  color: black;
-  position: relative;
-  overflow: hidden;
-}
-.digit {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  transition: rotateIn 5s ease;
-}
 .viewport-observer {
   height: 1px;
   width: 100%;

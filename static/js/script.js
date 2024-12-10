@@ -1,64 +1,13 @@
-//digit round animation
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startAnimation();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+//number animation
+const first=document.querySelector(".first")
+const middle=document.querySelector(".middle")
+const last=document.querySelector(".last")
+setTimeout(()=>{
+first.innerHTML="3"
+middle.innerHTML="7"
+last.innerHTML="9"
+},1000)
 
-    observer.observe(document.getElementById('viewportTrigger'));
-
-    function startAnimation() {
-    
-        const targetDigits = [5, 5, 4];
-        setTimeout(() => {
-            animateDigit('digit3', targetDigits[2], 0);
-            animateDigit('digit2', targetDigits[1], 500);
-            animateDigit('digit1', targetDigits[0], 1000);
-        }, 500);
-    }
-
-    function animateDigit(elementId, targetValue, delay) {
-        const element = document.getElementById(elementId);
-        let currentValue = 0;
-
-        const numbers = Array.from({ length: 10 }, (_, i) => i);
-        let steps = [];
-        
-        if (currentValue <= targetValue) {
-            for (let i = currentValue; i <= targetValue; i++) {
-                steps.push(i);
-            }
-        } else {
-            for (let i = currentValue; i >= targetValue; i--) {
-                steps.push(i);
-            }
-        }
-
-        setTimeout(() => {
-            let stepIndex = 0;
-            let interval = setInterval(() => {
-                if (stepIndex < steps.length) {
-                    element.innerText = steps[stepIndex];
-                    stepIndex++;
-                    applyRevolverEffect(element);
-                } else {
-                    clearInterval(interval);
-                }
-            }, 200);
-        }, delay);
-    }
-
-    function applyRevolverEffect(element) {
-        element.style.animation = 'rotateIn .07s ease-in-out';
-        element.addEventListener('animationend', () => {
-            element.style.animation = '';
-        });
-    }
-});
 
 
 //filter range
