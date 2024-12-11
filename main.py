@@ -80,9 +80,12 @@ browseBtnData=[
         "Gently used properties"
     ]
 redefineData=[
-        "Dubai",
-        "Londan",
-        "Middle East"
+        {"name":"Dubai",
+         "img":"https://plus.unsplash.com/premium_photo-1694475634077-e6e4b623b574?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+        {"name":"Londan",
+         "img":"https://images.unsplash.com/photo-1480449649358-ee14c6ee0b17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+        {"name":"Canada",
+         "img":"https://plus.unsplash.com/premium_photo-1672116452571-896980a801c8?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
     ]
 bestData=[
         {

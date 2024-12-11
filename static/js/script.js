@@ -1,15 +1,3 @@
-//number animation
-const first=document.querySelector(".first")
-const middle=document.querySelector(".middle")
-const last=document.querySelector(".last")
-setTimeout(()=>{
-first.innerHTML="3"
-middle.innerHTML="7"
-last.innerHTML="9"
-},1000)
-
-
-
 //filter range
 const budgetInput=document.getElementById('budget');
 const budgetButton=document.getElementById('budget-button');

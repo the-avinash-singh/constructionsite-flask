@@ -1,9 +1,3 @@
-:root{
-    --bg-color:#fffce2e3;
-  }
-  body{
-    background-color:var(--bg-color) !important;
-  }
 .city-card{
     width:18rem !important;
 }

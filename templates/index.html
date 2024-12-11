@@ -8,7 +8,7 @@
           type="video/mp4"
         />
       </video>
-      <div class="home-content text-center">
+      <h1 class="home-content text-center">
         <div>
           Your <strong>happily</strong> ever <strong>after</strong> begins at
           <strong>home.</strong>
@@ -48,115 +48,83 @@
             </button>
           </form>
         </div>
-      </div>
+      </h1>
     </div>
     <!-- new arrivals section -->
-    <div class="new-arrival text-center mt-5">
-      <h2 class="pt-2 heading">New Arrival:</h2>
-      <div
-        id="carousel-1"
-        class="carousel slide cust-carousel-item-wrapper"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          {% for data in apiData%}
-          <div
-            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
-            id="slide{{ loop.index }}"
-            data-bs-interval="3000"
-          >
-            <div
-              class="cust-carousel-item-inner-wrapper d-flex justify-content-between mx-auto"
-            >
-              <div class="bg-white cust-carousel-item rounded-5">
-                <img src="{{data.url1}}" class="cust-carousel-item rounded-5" alt="">
-              </div>
-              <div class="bg-white cust-carousel-item rounded-5">
-                <img src="{{data.url2}}" class="cust-carousel-item rounded-5" alt="">
-              </div>
-              <div class="bg-white cust-carousel-item rounded-5">
-                <img src="{{data.url3}}" class="cust-carousel-item rounded-5" alt="">
-              </div>
-            </div>
+    <div class="new-arrival text-center my-5">
+      <h2 class="heading mb-5">New Arrival:</h2>
+      <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+        <div class="card" style="width: 25rem;" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Luxury Villa in Mumbai</h3>
+              <div class="text-secondary mb-2">Price: &#8377;12,000,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
           </div>
-          {%endfor%}
         </div>
-        <div class="text-center mt-3">
-          <a
-            class="text-decoration-none text-dark"
-            type="button"
-            data-bs-target="#carousel-1"
-            data-bs-slide="prev"
-          >
-            <span class="">&lt;-</span>
-          </a>
-          <a href="#" class="text-decoration-none text-dark">view all</a>
-          <a
-            class="text-decoration-none text-dark"
-            type="button"
-            data-bs-target="#carousel-1"
-            data-bs-slide="next"
-          >
-            <span class="">-&gt;</span>
-          </a>
+        <div class="card" style="width: 25rem;" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Modern Apartment in Delhi</h3>
+              <div class="text-secondary mb-2">Price: &#8377;9,500,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
+          </div>
+        </div><div class="card" style="width: 25rem;" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Cozy Cottage in Bangalore</h3>
+              <div class="text-secondary mb-2">Price: &#8377;12,000,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <hr class="m-0 w-75 mx-auto"/>
     <!-- trending project section -->
-    <div class="trend-proj text-center">
-      <h2 class="pt-2 heading">Trending projects:</h2>
-      <div
-        id="carousel-2"
-        class="carousel slide cust-carousel-item-wrapper"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          {% for data in apiData%}
-          <div
-            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
-            id="slide{{ loop.index }}"
-            data-bs-interval="4000"
-          >
-            <div
-              class="cust-carousel-item-inner-wrapper d-flex justify-content-between mx-auto"
-            >
-            <div class="bg-white cust-carousel-item rounded-5">
-              <img src="{{data.url1}}" class="cust-carousel-item rounded-5" alt="">
-            </div>
-            <div class="bg-white cust-carousel-item rounded-5">
-              <img src="{{data.url2}}" class="cust-carousel-item rounded-5" alt="">
-            </div>
-            <div class="bg-white cust-carousel-item rounded-5">
-              <img src="{{data.url3}}" class="cust-carousel-item rounded-5" alt="">
-            </div>
-            </div>
+    <div class="trend-proj text-center my-5">
+      <h2 class="heading mb-5">Trending projects:</h2>
+      <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+        <div class="card" style="width: 25rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Luxury Villa in Mumbai</h3>
+              <div class="text-secondary mb-2">Price: &#8377;12,000,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
           </div>
-          {%endfor%}
         </div>
-        <div class="text-center mt-3">
-          <a
-            class="text-decoration-none text-dark"
-            type="button"
-            data-bs-target="#carousel-2"
-            data-bs-slide="prev"
-          >
-            <span class="">&lt;-</span>
-          </a>
-          <a href="#" class="text-decoration-none text-dark">view all</a>
-          <a
-            class="text-decoration-none text-dark"
-            type="button"
-            data-bs-target="#carousel-2"
-            data-bs-slide="next"
-          >
-            <span class="">-&gt;</span>
-          </a>
+        <div class="card" style="width: 25rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Modern Apartment in Delhi</h3>
+              <div class="text-secondary mb-2">Price: &#8377;9,500,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
+          </div>
+        </div><div class="card" style="width: 25rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Cozy Cottage in Bangalore</h3>
+              <div class="text-secondary mb-2">Price: &#8377;12,000,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <hr class="m-0 w-75 mx-auto"/>
     <!-- what matters section -->
-    <div class="text-center overflow-auto">
-      <div class="fs-2 pt-2 heading">Filter by <strong>What Matters:</strong></div>
+    <div class="text-center overflow-auto my-5">
+      <h2 class=" heading mb-5">Filter by What Matters:</h2>
       <div
         class="d-flex justify-content-around align-items-center flex-wrap text-wrap"
       >
@@ -170,31 +138,30 @@
         {%endfor%}
       </div>
     </div>
+    <hr class="m-0 w-75 mx-auto"/>
     <!-- lets find section -->
-    <div class="text-center overflow-auto px-4">
-      <div class="fs-2 pt-2 heading">
-        Let's find <strong>you</strong> a <strong>home</strong> in the
-        <strong>city</strong> you love <strong>most!</strong>
-      </div>
+    <div class="text-center overflow-auto px-4 my-5">
+      <h2 class=" heading mb-5">
+        Let's find you a home in the city you love most!
+      </h2>
       <div
-        class="my-4 let-btn-wrapper d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
+        class="my-3 let-btn-wrapper d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
       >
         {%for letData in letFindData%}
         <a href="filter/{{letData.filter}}"><button class="let-btn mx-2" data-aos="fade-up-right" data-aos-delay="{{loop.index}}00">{{letData.text}}</button></a>
         {%endfor%}
       </div>
-      <div class="fs-3 pt-2 mb-4">
-        We <strong>promise</strong>, buying <strong>property</strong> with
-        <strong>Wyndo</strong> is as <strong>easy</strong> as catching up with
-        an old <strong>friend!</strong>
+      <div class="fs-5 mb-3">
+        We promise, buying property with Wyndo is as easy as catching up with an old friend!
         <!-- todo arrow breadcrum design -->
       </div>
     </div>
+    <hr class="m-0 w-75 mx-auto"/>
     <!-- browse section -->
-    <div class="text-center overflow-auto">
-      <div class="fs-2 pt-2 heading">
-        Browse <strong>Our Current Exclusives:</strong>
-      </div>
+    <div class="text-center overflow-auto mt-5">
+      <h2 class="heading mb-5">
+        Browse Our Current Exclusives:
+      </h2>
       <div
         class="browse-btn-wrapper my-5 d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
       >
@@ -203,18 +170,15 @@
         {%endfor%}
       </div>
     </div>
+    <hr class="m-0 w-75 mx-auto"/>
     <!-- just like Section -->
-    <div class="just-like text-center px-md-4">
-      <div class="fs-2 py-2 pb-4 heading">
-        Just like the <strong>good old days</strong>-but
-        <strong>better</strong>! we'll handel the <strong>details</strong> so
-        <strong>you</strong> can
-        <strong>focus on your <strong>new beginning.</strong></strong>
-      </div>
-      <div class="fs-2 my-4">
-        we've got <strong>you</strong> covered, every <strong>step</strong> of
-        the <strong>way</strong>... from <strong>loans</strong> to
-        <strong>moving vans.</strong>
+    <div class="just-like text-center px-md-4 mt-5">
+      <h2 class=" pb-4 heading">
+        Just like the good old days
+      </h2>
+      <div class="fs-5 text-secondary">But better! we'll handel the details so you can focus on your new begining.</div>
+      <div class="my-4 fw-semibold fs-4">
+        we've got you covered, every step of the way... from loans to moving vans.
       </div>
       <div class="d-flex justify-content-evenly my-4 fs-6 flex-wrap mx-4 mx-md-0">
         <div class="img-card position-relative" data-aos="zoom-in" style="background-image: url(https://plus.unsplash.com/premium_photo-1661619603945-4abeed3cba99?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
@@ -234,16 +198,13 @@
           </div>
         </div>
     </div>
-      <div class="my-4 fs-1 heading">But <strong>Wait,</strong> there's more!</div>
-      <div class="my-4">
-        Our <strong>Concierge</strong> Service: <strong>Your</strong> home,
-        <strong>Our</strong> care.
-      </div>
-      <div class="my-4 mx-4">
-        Relax and let us handle the <strong>day-to-day</strong> property management,
-        from <strong>tenant screening </strong> to <strong>maintenance</strong>,
-        while providing <strong>personalized</strong> Concierge service
-        <strong>tailored</strong> to your <strong>needs</strong>.
+      <h2 class="my-5 text-secondary fw-bold">Wait, there's more!</h2>
+      <h2 class="my-4 heading">
+        Our Concierge  Service:
+      </h2>
+       
+      <div class="my-4 mx-4 text-secondary">
+        Your home, our care. Relax and let us handle the day-to-day property management, from tenant screening to maintenance, while providing personalized concierge services tailored to your needs.
       </div>
       <div class="d-flex justify-content-evenly my-4 fs-6 flex-wrap mx-4 mx-md-0">
           <div class="img-card position-relative" data-aos="zoom-in" style="background-image: url(https://plus.unsplash.com/premium_photo-1679923913530-16c91821a213?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
@@ -262,94 +223,87 @@
             </div>
           </div>
       </div>
-      <div><strong>Home</strong> sweet <strong>upgraded</strong> home!</div>
+      <div class="fs-2 mt-5"><strong>Home</strong> sweet <strong>upgraded</strong> home!</div>
       <div
-        class="d-flex gap-4 justify-content-around align-items-center flex-wrap text-wrap py-4"
+        class="d-flex gap-4 justify-content-around align-items-center flex-wrap text-wrap mb-4"
       >
-          <div class="just-div mx-auto align-content-center" data-aos="flip-left" data-aos-delay="100">
-            From <strong>drab</strong> to <strong>fab:</strong> we help you <strong>design your home interiors</strong>with <strong>heart.</strong>
+          <div class="just-div mx-auto align-content-center fs-6 text-secondary" data-aos="flip-left" data-aos-delay="100">
+            <i class="fa-solid fa-handshake-angle fs-2"></i>
+            <div class=" fw-medium text-black fs-5">From drab to fab:</div> we help you design your home interiors with heart.
           </div>
-        <div class="just-div mx-auto align-content-center" data-aos="flip-left" data-aos-delay="200">
-          <strong>Safety First:</strong> We secure your <strong>property</strong> with <strong>CCTV, alarms</strong> and <strong>motion sensors-</strong>our team's on it!
+        <div class="just-div mx-auto align-content-center fs-6 text-secondary" data-aos="flip-left" data-aos-delay="200">
+          <i class="fa-solid fa-helmet-safety fs-2"></i>
+          <div class="fw-medium text-black fs-5">Safety First:</div> We secure your property with CCTV, alarms and motion sensors-our team's on it!
         </div>
-        <div class="just-div mx-auto align-content-center" data-aos="flip-left" data-aos-delay="300">
-          <strong>Welcome to the Future: wyndo</strong> takes care of <strong>all your</strong> home <strong>automation</strong> for you!
+        <div class="just-div mx-auto align-content-center fs-6 text-secondary" data-aos="flip-left" data-aos-delay="300">
+          <i class="fa-solid fa-globe fs-2"></i>
+          <div class="fw-medium text-black fs-5">Welcome to the Future:</div> Wyndo takes care of all your home automation for you!
         </div>
       </div>
     </div>
+    <hr class="m-0 w-75 mx-auto"/>
     <!-- need a hand section -->
-     <div class="text-center px-md-4">
-      <div class="fs-2 py-2 heading">Need a hand? <strong>Talk</strong> to us - we'll <strong>guide</strong> you <strong>home.</strong></div>
-      <div class="fs-4">
-        Picked, perfected and prepped just for you - <strong>Resyd&trade;</strong> homes are as <strong>move-in-ready</strong> as it gets!
+     <div class="text-center px-md-4 my-5">
+      <h2 class=" heading mb-5">Need a hand? Talk to us - We'll guide you home.</h2>
+      <div class="fs-5 text-secondary mb-4">
+        Picked, perfected and prepped just for you - Resyd&trade; homes are as move-in-ready as it gets!
       </div>
-      <div
-        id="carousel-3"
-        class="carousel slide cust-carousel-item-wrapper py-4"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          {% for data in apiData%}
-          <div
-            class="carousel-item {% if loop.index == 1 %} active {% endif %}"
-            id="slide{{ loop.index }}"
-            data-bs-interval="3000"
-          >
-            <div
-              class="cust-carousel-item-inner-wrapper d-flex justify-content-between mx-auto"
-            >
-            <div class="bg-white cust-carousel-item rounded-5">
-              <img src="{{data.url1}}" class="cust-carousel-item rounded-5" alt="">
-            </div>
-            <div class="bg-white cust-carousel-item rounded-5">
-              <img src="{{data.url2}}" class="cust-carousel-item rounded-5" alt="">
-            </div>
-            <div class="bg-white cust-carousel-item rounded-5">
-              <img src="{{data.url3}}" class="cust-carousel-item rounded-5" alt="">
-            </div>
-            </div>
+      <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+        <div class="card" style="width: 25rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Luxury Villa in Mumbai</h3>
+              <div class="text-secondary mb-2">Price: &#8377;12,000,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
           </div>
-          {%endfor%}
         </div>
-        <div class="text-center mt-3">
-          <a
-            class="text-decoration-none text-dark"
-            type="button"
-            data-bs-target="#carousel-3"
-            data-bs-slide="prev"
-          >
-            <span class="">&lt;-</span>
-          </a>
-          <a href="#" class="text-decoration-none text-dark">view all</a>
-          <a
-            class="text-decoration-none text-dark"
-            type="button"
-            data-bs-target="#carousel-3"
-            data-bs-slide="next"
-          >
-            <span class="">-&gt;</span>
-          </a>
+        <div class="card" style="width: 25rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Modern Apartment in Delhi</h3>
+              <div class="text-secondary mb-2">Price: &#8377;9,500,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
+          </div>
+        </div><div class="card" style="width: 25rem;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" data-aos-easing="linear">
+          <img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg" class=" p-3 rounded-5 ratio-16x9">
+          <div class="card-body">
+            <p class="card-text">
+              <h3>Cozy Cottage in Bangalore</h3>
+              <div class="text-secondary mb-2">Price: &#8377;12,000,000</div>
+              <button type="button" class="bg-warning btn w-100 py-2">View Details</button>
+            </p>
+          </div>
         </div>
       </div>
-     </div>
+      </div>
+      <hr class="m-0 w-75 mx-auto"/>
      <!-- redefine section -->
-     <div class="text-center px-md-4">
-      <div class="fs-2 py-2 pb-4 heading">
-        <strong>Redefine your status:</strong> Discover <strong>stunning</strong> properties from <strong>Dubai</strong> to <strong>London</strong> with undeatabe <strong>return-on-investments!</strong>
-      </div>
+     <div class="text-center px-md-4 mt-5">
+      <h2 class="mb-3 heading">
+        Redefine your status: 
+      </h2>
+      <div class="text-secondary fs-5">Discover stunning properties from Dubai to London with undeatabe return-on-investments!</div>
       <div
-        class="mt-4 pb-5 let-btn-wrapper d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
+        class="mt-4 pb-5 d-flex justify-content-around align-items-center align-content-center mx-auto flex-wrap"
       >
-        {%for text in redefineData%}
-        <button class="let-btn mx-2" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-delay="{{loop.index}}00">{{text}}</button>
-        {%endfor%}
+      {%for text in redefineData%}
+      <div class="img-card position-relative mx-4 mx-md-0" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-delay="{{loop.index}}00" style="background-image: url({{text.img}});">
+        <div class="card-content">
+          <div class="fs-3 fw-medium text-white">{{text.name}}</div>
+        </div>
+      </div>
+      {%endfor%}
       </div>
      </div>
      <!-- best at section -->
-      <div class="text-center" id="accordionFlushExample">
-        <div class="fs-2 py-2 heading">
-          Here's what we're <strong>best</strong> at:
-        </div>
+      <div class="text-center mb-5" id="accordionFlushExample">
+        <h2 class=" heading">
+          Here's what we're best at:
+        </h2>
         <div class="d-flex justify-content-around gap-5 gap-md-3 flex-wrap py-5 mx-2">
         {% for data in bestData%}
         <div class="accordion best-acc rounded-5">
@@ -367,48 +321,42 @@
         {%endfor%}
       </div>
       </div>
+      <hr class="m-0 w-75 mx-auto"/>
       <!-- shoppers section -->
-       <div class="text-center px-md-4">
-        <div class="fs-3 pt-2 pb-4 heading">No. of <strong>wyndo</strong>- shoppers who've discovered their <strong>dream home</strong>, here:
-          <span class="border border-2 border-black text-black pb-2">
-          <span class="odometer first">0</span>
-          <span class="odometer border middle border-2 border-top-0 border-bottom-0 border-black">0</span>
-          <span class="odometer last">0</span>
-        </span>
-      <div class="viewport-observer" id="viewportTrigger"></div>
-    </div>
-    <div class="fs-4 mb-2">Buying a <strong>home</strong> is like having a <strong>Conversation</strong> with an old <strong>friend.</strong></div>
-    <div class="fs-4">
-      <strong>Schedule a Free Consultation</strong>: Book a 15-minute call and get <strong>personalized guidence.</strong>
-    </div>
+       <div class="text-center px-md-4 my-5 pb-4">
+        <h2 class="fs-3 pt-2 heading">No. of wyndo- shoppers who've discovered their dream home, here:</h2>
+    <div class="fs-5 text-secondary mb-5">Buying a home is like having a Conversation with an old friend. Schedule a Free Consultation: Book a 15-minute call and get personalized guidence.</div>
     {% block calander%}
     {% include "calendar.html" %}
     {% endblock calander %}
        </div>
+       <hr class="m-0 w-75 mx-auto"/>
        <!-- why choose section -->
-          <div class="fs-2 text-center pt-2 mb-4 heading">why choose <strong>wyndo</strong>? what sets <strong>us</strong> apart?</div>
-            <div class="pb-5 d-flex flex-wrap gap-4 mx-auto justify-content-evenly">
+          <h2 class=" text-center pt-2 mt-5 mb-3 heading">why choose wyndo?</h2>
+          <div class="fs-3 text-secondary mb-3 text-center"> what sets us apart?</div>
+            <div class="pb-5 d-flex flex-wrap gap-4 mx-auto justify-content-evenly text-secondary">
               <div class="choose-text mx-2">
                 <img src="{{url_for('static', filename='img/companion.png')}}" alt="img" class="icon-img text-center">
-                <div class="fw-medium fs-5">1. A companion in Your Home Journey :</div> Whether you buy your home through Wyndo or not, we're here for every step of your journey-from designing your interiors to concierge services and helping you move in. Our commitment doesn't waver, even if your final choice isn't with us.
+                <div class="fw-medium fs-5 text-black">1. A companion in Your Home Journey :</div> Whether you buy your home through Wyndo or not, we're here for every step of your journey-from designing your interiors to concierge services and helping you move in. Our commitment doesn't waver, even if your final choice isn't with us.
               </div>
               <div class="choose-text mx-2">
                 <img src="{{url_for('static', filename='img/quality.png')}}" alt="img" class="icon-img text-center">
-                <div class="fw-medium fs-5">2. Quality We Trust :</div> We only offer properties and projects we'd choose for ourselves. If it's not good enough for us, it's not good enough for you.
+                <div class="fw-medium fs-5 text-black">2. Quality We Trust :</div> We only offer properties and projects we'd choose for ourselves. If it's not good enough for us, it's not good enough for you.
               </div>
               <div class="choose-text mx-2">
                 <img src="{{url_for('static', filename='img/home.png')}}" alt="img" class="icon-img text-center">
-                <div class="fw-medium fs-5">3. Your Property Hub :</div> Skip the hassle of hunting property by property. With Wyndo, you get access to a full buffet of options, from free to premium. No pressure to make a rushed decision-take your time. Buying a home is a big step, not a race against the clock.
+                <div class="fw-medium fs-5 text-black">3. Your Property Hub :</div> Skip the hassle of hunting property by property. With Wyndo, you get access to a full buffet of options, from free to premium. No pressure to make a rushed decision-take your time. Buying a home is a big step, not a race against the clock.
               </div>
               <div class="choose-text mx-2">
                 <img src="{{url_for('static', filename='img/need.png')}}" alt="img" class="icon-img text-center">
-                <div class="fw-medium fs-5">4. Tailored Just For You :</div> We know one size doesn't fit all. At Wyndo, it's all about personalizing your experience to match your lifestyle and preferences.
+                <div class="fw-medium fs-5 text-black">4. Tailored Just For You :</div> We know one size doesn't fit all. At Wyndo, it's all about personalizing your experience to match your lifestyle and preferences.
               </div>
             </div>
+            <hr class="m-0 w-75 mx-auto"/>
         <!-- ready to join section -->
-         <div class="text-center px-md-4 px-3 px-sm-0 mb-5">
+         <div class="text-center px-md-4 px-3 px-sm-0 my-5">
           <h2 class="heading">Ready to join us on thid journey?</h2>
-          <div class="fs-4 mb-3">Discover how Wyndo can assist you in finding the perfect property or invest. Get in touch with us today!</div>
+          <div class="fs-5 text-secondary my-4">Discover how Wyndo can assist you in finding the perfect property or invest. Get in touch with us today!</div>
           <div class=" d-flex flex-column flex-md-row align-items-center justify-content-evenly mx-auto ready-list-wrapper flex-column flex-md-row">
             <div class="img-card position-relative" data-aos="zoom-in" style=" background-image: url(https://images.unsplash.com/photo-1732494644033-fedc311f0442?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); ">
               <div class="card-content">
@@ -421,9 +369,11 @@
               </div>
             </div>
           </div>
+          </div>
+          <hr class="m-0 w-75 mx-auto"/>
           <!-- core value -->
-          <h2 class="mt-5 mb-4 heading">Our core values</h2>
-          <div class="d-flex align-items-center justify-content-evenly flex-column flex-md-row">
+          <h2 class="my-5 mb-4 heading text-center">Our core values</h2>
+          <div class="d-flex align-items-center justify-content-evenly flex-column flex-md-row mb-5">
             <div class=" d-flex flex-column flex-md-row align-items-center justify-content-evenly mx-auto ready-list-wrapper">
               <div class="img-card position-relative" data-aos="zoom-in" style="background-image: url(https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
                 <div class="card-content">
@@ -442,17 +392,14 @@
               </div>
             </div>
           </div>
-         </div>
+          <hr class="m-0 w-75 mx-auto"/>
          <!-- about us -->
-         <h2 class="text-center heading mb-4">About Us</h2>
+         <h2 class="text-center heading my-5">About Us</h2>
           <div class="mx-4 mb-4 d-flex flex-column-reverse flex-md-row gap-3 align-items-center">
-            <div class="about-text">
-              <div class="fs-2 fw-medium">With Wyndo, Homebuying is a WYN-WYN!</div>
-              <div class="fs-4">
-                you desrve a homrbuying experience that's as comferting as your favourite latte.
-              </div>
-              <div class="fs-4">
-                We're here to empower you and synplify the complex. Make your dream home a reality now with Wyndo!
+            <div class="about-text text-secondary">
+              <div class=" fw-medium fs-3 text-start ms-4 text-black">With Wyndo, Homebuying is a WYN-WYN!</div>
+              <div class="fs-5">
+                you desrve a homrbuying experience that's as comferting as your favourite latte. We're here to empower you and synplify the complex. Make your dream home a reality now with Wyndo!
               </div>
             </div>
             <div class="about-img ">

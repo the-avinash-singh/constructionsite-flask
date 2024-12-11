@@ -1,15 +1,9 @@
-:root{
-  --bg-color:#fffce2e3;
-}
-body{
-  background-color:var(--bg-color) !important;
-}
 .heading{
   color: #f8821b !important;
 }
 .home{
     background: #827f7f;
-    height: 40rem;
+    height: 50rem;
   position: relative;
 }
 .home::before{
@@ -36,26 +30,8 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 7dvw;
     color: #fff;
     z-index: 3;
-  }
-  .new-arrival{
-    height: 25rem;
-  }
-  .cust-carousel-item{
-    width: 30dvi;
-    height: 30dvi;
-  }
-  .cust-carousel-item-wrapper{
-    position: relative;
-    top:18%
-  }
-  .cust-carousel-item-inner-wrapper{
-    width: 100%;
-  }
-  .trend-proj{
-    height: 25rem;
   }
   .matter-card{
     width: 24rem;
@@ -98,7 +74,7 @@ body{
     transform: translate(3px, 3px);
   }
   .let-btn-wrapper{
-    width: 80%;
+    width: 90%;
   }
   .browse-btn{
     background-color: rgb(50, 198, 139);
@@ -115,20 +91,19 @@ body{
     font-size: 1.3rem;
   }
   .just-div {
-    width: 17rem;
-    height: 8rem;
+    width: 22rem;
+    height: 11rem;
     font-size: 1.2rem;
     color: #000000;
     padding: 10px 20px;
-    border: 1px solid #000000;
-    background: #e67957;
-    box-shadow: 8px 8px #f59a4b;
+    border: 1px solid #f8b643;
     cursor: pointer;
     margin: 35px 0;
+    border-radius: 10px;
+    background-color: #fff;
   }
   .just-div:hover {
-    box-shadow: none;
-    transform: translate(3px, 3px);
+    box-shadow: 8px 8px 20px #00000032;
   }
 .viewport-observer {
   height: 1px;
@@ -196,32 +171,13 @@ body{
 }
 
   @media (max-width:500px){
-  .cust-carousel-item-wrapper{
-    top:25%;
-  }
-  .let-btn{
-    margin: 20px 0;
-  }
   .just-like{
     font-size: 1rem;
   }
 }
   @media (min-width:780px){
     .home{
-      height: 53rem;
-    }
-    .home-content{
-      font-size: 4dvw;
-    }
-    .cust-carousel-item{
-      width: 10rem;
-      height: 10rem;
-    }
-  .cust-carousel-item-wrapper{
-    top:15%;
-  }
-    .cust-carousel-item-inner-wrapper{
-      width: 80%;
+      height: 54rem;
     }
     .matter-card{
       width: 30dvi;
@@ -230,7 +186,7 @@ body{
       width: 30dvi;
     }
     .let-btn-wrapper{
-      width: 60%;
+      width: 65%;
     }
     .browse-btn-wrapper{
       width: 65%;
@@ -254,13 +210,6 @@ body{
     }
   }
   @media (min-width:1000px){
-    .cust-carousel-item{
-      width: 12rem;
-      height: 12rem;
-    }
-    .cust-carousel-item-inner-wrapper{
-      width: 57%;
-    }
     .let-btn-wrapper{
       width: 50%;
     }
@@ -279,14 +228,25 @@ body{
     }
   }
   @media (min-width:1200px){
+    .home-content{
+      font-size: 2.5rem !important;
+    }
     .let-btn-wrapper{
-      width: 32%;
+      width: 43%;
     }
     .browse-btn{
       width: 15rem;
     }
     .browse-btn-wrapper{
       width: 65%;
+    }
+  }
+  @media (min-width:1500px){
+    .let-btn-wrapper{
+      width: 34%;
+    }
+    .browse-btn-wrapper{
+      width: 50%;
     }
   }
 @keyframes rotateIn {
